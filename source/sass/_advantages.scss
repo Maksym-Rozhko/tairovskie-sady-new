@@ -1,0 +1,275 @@
+.advantages {
+    padding-top: 206px;
+    padding-bottom: 127px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #FFFFFF 17.94%, rgba(255, 255, 255, 0.44) 70.71%, rgba(255, 255, 255, 0) 100%), url('../images/advantages/main-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(180deg, rgba(30, 35, 48, 0) 0%, rgba(30, 35, 48, 0.66) 100%);
+        width: 100%;
+        height: 638px;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .main-title {
+        @include mainTitle;
+        max-width: 580px;
+        margin: 0 auto;
+
+        &::before {
+            content: "03/";
+            left: calc(50% - 90px)
+        }
+    }
+
+    &__content {
+        margin-top: 100px;
+        margin-bottom: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 20px;
+        row-gap: 40px;
+
+        .advantages-item {
+            max-width: 340px;
+            width: 100%;
+            padding-top: 28px;
+            padding-bottom: 47px;
+            padding-right: 33px;
+            background: #FFFFFF;
+            box-shadow: 7px 4px 25px rgba(83, 38, 38, 0.1);
+            border-radius: 6px;
+            transition: all ease-in-out .4s;
+
+            &__icons {
+                display: flex;
+                justify-content: space-between;
+                
+                .icon {
+                    width: 74px;
+                    height: 74px;
+                    fill: #9ACC10;
+                    transition: all ease-in-out .4s;
+                }
+            }
+
+            &__count {
+                width: 56px;
+                height: 36px;
+                background: #9ACC10;
+                border-radius: 0px 20px 20px 0px;
+                font-family: 'Lato', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 170%;
+                color: #FBFBFE;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all ease-in-out .4s;
+            }
+
+            &__title {
+                font-family: 'Merriweather', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 150%;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #000000;
+                margin-top: 15px;
+                margin-bottom: 6px;
+                margin-left: 56px;
+                transition: all ease-in-out .4s;
+            }
+
+            &__text {
+                font-family: 'Lato', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 170%;
+                color: #000000;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: 56px;
+                transition: all ease-in-out .4s;
+            }
+            
+            &:hover {
+                background: #9ACC10;
+
+                .advantages-item__icons {
+                    .icon {
+                        fill: #FFFFFF;
+                    }
+                }
+
+                .advantages-item__count {
+                    background: #FBFBFE;
+                    color: #9ACC10;
+                }
+
+                .advantages-item__title,
+                .advantages-item__text {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .main-button {
+        @include mainButton;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 290px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 812px) {
+    .advantages {
+        &__content {
+            .advantages-item {
+                max-width: 220px;
+                padding-right: 15px;
+                padding-bottom: 25px;
+
+                &__title,
+                &__text {
+                    margin-left: 25px;
+                }
+
+                &__title {
+                    font-size: 14px;
+                    line-height: 120%;
+                }
+
+                &__text {
+                    font-size: 12px;
+                    line-height: 120%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .advantages {
+        padding-top: 75px;
+        padding-bottom: 50px;
+
+        .main-title {
+            @include mainTitleMobile;
+            max-width: 580px;
+            margin: 0 auto;
+            text-align: center;
+
+            &::after {
+                left: calc(50% - 160px);
+            }
+
+            &::before {
+                content: "03/";
+                left: calc(50% - 80px);
+            }
+        }
+
+        &__content {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            column-gap: 10px;
+            row-gap: 20px;
+
+            .advantages-item {
+                max-width: 150px;
+                padding-right: 5px;
+                padding-bottom: 15px;
+
+                &__count {
+                    width: 46px;
+                    height: 26px;
+                    font-size: 12px;
+                    line-height: 150%;
+                }
+
+                &__icons {
+                    .icon {
+                        width: 44px;
+                        height: 44px;
+                    }
+                }
+
+                &__title,
+                &__text {
+                    margin-left: 5px;
+                }
+
+                &__title {
+                    font-size: 12px;
+                    line-height: 100%;
+                    margin-top: 10px;
+                }
+
+                &__text {
+                    font-size: 12px;
+                    line-height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .advantages {
+
+        .main-title {
+            @include mainTitleMobileSmall;
+            max-width: 580px;
+            margin: 0 auto;
+            text-align: center;
+
+            &::after {
+                left: calc(50% - 100px);
+                width: 200px;
+            }
+
+            &::before {
+                content: "03/";
+                left: calc(50% - 60px);
+            }
+        }
+
+        &__content {
+            .advantages-item {
+                max-width: 135px;
+
+                &__icons {
+                    .icon {
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+
+                &__title {
+                    font-size: 10px;
+                }
+
+                &__text {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

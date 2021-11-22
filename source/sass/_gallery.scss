@@ -1,0 +1,188 @@
+.gallery {
+    position: relative;
+    padding-top: 176px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &::after {
+        background-image: url('../images/icons/leaf-6.svg');
+        background-size: auto;
+        width: 197px;
+        height: 233px;
+        left: 0;
+        top: -55px;
+    }
+
+    .main-title {
+        @include mainTitle;
+        margin: 0 auto;
+        max-width: 300px;
+        text-align: center;
+
+        &::before {
+            content: "06/";
+            left: calc(50% - 90px)
+        }
+    }
+
+    &-wrapper {
+        max-width: 1700px;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 90px;
+        position: relative;
+
+        .swiper-slide {
+            .gallery-img {
+                border-radius: 6px;
+                max-width: 1700px;
+                width: 100%;
+                margin: 0 auto;
+                height: 800px;
+            }
+        }
+
+        .gallery-controls {
+            background: #9ACC10;
+            border: none;
+            width: 81px;
+            height: 81px;
+            position: absolute;
+            top: 45%;
+            z-index: 1;
+            cursor: pointer;
+            transition: all ease-in-out .4s;
+
+            .icon {
+                width: 41px;
+                height: 31px;
+                fill: transparent;
+                stroke: #fff;
+                transition: all ease-in-out .4s;
+            }
+        }
+
+        .gallery-btn__prev {
+            left: 0;
+            border-radius: 0px 60px 60px 0px;
+        }
+
+        .gallery-btn__next {
+            right: 0;
+            border-radius: 60px 0px 0px 60px;
+        }
+
+        .gallery-controls:hover {
+            background: #fff;
+
+            .icon {
+                stroke: #9ACC10;
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .gallery {
+
+        &-wrapper {
+
+            .swiper-slide {
+                .gallery-img {
+                    border-radius: 6px;
+                    max-width: 1700px;
+                    width: 100%;
+                    margin: 0 auto;
+                    max-height: 500px;
+                }
+            }
+            .gallery-controls {
+                top: 45%;
+            }
+        }
+    }    
+}
+
+@media (max-width: 812px) {
+    .gallery {
+        &::after {
+            background-size: contain;
+            width: 97px;
+            height: 133px;
+            top: -36px;
+        }
+
+        &-wrapper {
+            .swiper-slide {
+                .gallery-img {
+                    max-height: 400px;
+                }
+            }
+        }
+    }    
+}
+
+@media (max-width: 575px) {
+    .gallery {
+        padding-top: 75px;
+
+        .main-title {
+            @include mainTitleMobile;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+
+            &::after {
+                left: calc(50% - 150px);
+            }
+
+            &::before {
+                content: "06/";
+                left: calc(50% - 80px);
+            }
+        }
+        &-wrapper {
+            margin-top: 40px;
+
+            .swiper-slide {
+                .gallery-img {
+                    max-height: 300px;
+                }
+            }
+            .gallery-controls {
+                top: 45%;
+            }
+        }
+    }    
+}
+
+@media (max-width: 414px) {
+    .gallery {
+        padding-top: 75px;
+
+        .main-title {
+            @include mainTitleMobileSmall;
+            &::before {
+                content: "06/";
+                left: calc(50% - 60px);
+            }
+        }
+        &-wrapper {
+            .swiper-slide {
+                .gallery-img {
+                    max-height: 250px;
+                }
+            }
+            .gallery-controls {
+                width: 61px;
+                height: 51px;
+            }
+        }
+    }    
+}

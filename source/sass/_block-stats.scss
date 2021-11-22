@@ -1,0 +1,139 @@
+.form-counter {
+    padding-top: 106px;
+    padding-bottom: 136px;
+    position: relative;
+    background: #9ACC10;
+    z-index: -1;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        background: url('../images/icons/waves-line.svg');
+        width: 1688px;
+        height: 518.39px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        z-index: -1;
+        top: 0;
+        left: calc(50% - 865px);
+    }
+
+    .form-counter__box {
+        display: flex;
+        align-items: center;
+    }
+
+    .form-counter__box.box-top {
+        max-width: 1314px;
+        margin-bottom: 47px;
+        justify-content: space-between;
+    }
+
+    .form-counter__box.box-bottom {
+        max-width: 667px;
+        margin: 0 auto;
+
+        .form-item-one {
+            margin-right: 120px;
+        }
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 227px;
+        width: 100%;
+
+        .counter-digits {
+            font-family: 'Merriweather', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 86.4762px;
+            line-height: 140%;
+            color: #FBFBFE;
+            margin-bottom: 5px;
+        }
+
+        .counter-descript {
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 170%;
+            color: #FBFBFE;
+            position: relative;
+            padding-left: 15px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #FBFBFE;
+                left: 0;
+                top: calc(50% - 3px);
+            }
+        }
+    }
+}
+
+@media (max-width: 812px) {
+    .form-counter {
+        &::before {
+            content: none;
+        }
+
+        .form-counter__box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        .form-counter__box.box-top {
+            max-width: inherit;
+        }
+    
+        .form-counter__box.box-bottom {
+            max-width: inherit;
+    
+            .form-item-one {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .form-counter {
+        padding-top: 50px;
+        padding-bottom: 75px;
+
+        &-item {
+            max-width: inherit;
+            width: inherit;
+
+            .counter-digits {
+                font-size: 56px;
+                line-height: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .form-counter {
+        &-item {
+            .counter-digits {
+                font-size: 46px;
+            }
+
+            .counter-descript {
+                font-size: 12px;
+                line-height: 150%;
+            }
+        }
+    }
+}

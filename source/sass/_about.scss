@@ -1,0 +1,174 @@
+.about-building {
+    overflow: hidden;
+    padding-top: 150px;
+
+    &__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        left: -110px;
+    }
+
+    &__images {
+        position: relative;
+        margin-right: 80px;
+
+        .img {
+            width: 100%;
+        }
+
+        .about-descript {
+            font-family: 'Caveat', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 120%;
+            color: #FFFFFF;
+            margin-top: 0;
+            margin-bottom: 0;
+            position: absolute;
+            padding: 25px 53px;
+            background: #9ACC10;
+            bottom: 51px;
+            right: -28px;
+            max-width: 687px;
+            width: 100%;
+            min-height: 140px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 9px;
+                bottom: -20px;
+                border: 21px solid transparent;
+                border-top: 21px solid #7a9924;
+                transform: rotate(135deg);
+                z-index: -1;
+            }
+        }
+    }
+
+    &__info {
+        max-width: 460px;
+
+        .main-title {
+            @include mainTitle;
+
+            &::before {
+                content: "01/";
+            }
+        }
+
+        .main-text {
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 170%;
+            color: #1E2330;
+            margin-bottom: 23px;
+            margin-top: 0;
+            margin-bottom: 43px;
+
+            &--margin {
+                margin-bottom: 23px;
+                margin-top: 93px;
+            }
+        }
+
+        .main-button.main-button--transparent {
+            @include mainButton;
+            @include mainBtnTransparent;
+            display: block;
+            max-width: 250px;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 1650px) {
+    .about-building {
+        &__content {
+            left: 0;
+        }
+    }    
+}
+
+@media (max-width: 1200px) {
+    .about-building {
+        &__content {
+            flex-direction: column-reverse;
+        }
+
+        &__images {
+            margin-right: 0;
+            margin-top: 50px;
+        }
+    }    
+}
+
+@media (max-width: 812px) {
+    .about-building {
+        padding-top: 75px;
+
+        &__images {
+            .about-descript {
+                padding: 15px 25px;
+                font-size: 20px;
+                line-height: 100%;
+                min-height: 100px;
+            }
+        }
+
+        &__info {
+            .main-title {
+                &::before {
+                    top: -55px;
+                    left: -35px;
+                }
+            }
+            .main-text {
+                margin-bottom: 23px;
+    
+                &--margin {
+                    margin-bottom: 13px;
+                    margin-top: 43px;
+                }
+            }
+        }
+    }    
+}
+
+@media (max-width: 575px) {
+    .about-building {
+        padding-top: 75px;
+
+        &__images {
+            .about-descript {
+                padding: 15px 25px;
+                font-size: 20px;
+                line-height: 100%;
+                min-height: 100px;
+            }
+        }
+
+        &__info {
+            .main-title {
+                @include mainTitleMobile;
+            }
+        }
+    }    
+}
+
+
+@media (max-width: 414px) {
+    .about-building {
+
+        &__info {
+            .main-title {
+                @include mainTitleMobileSmall;
+            }
+        }
+    }    
+}

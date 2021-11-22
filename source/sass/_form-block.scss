@@ -1,0 +1,194 @@
+.form-block {
+    padding-top: 124px;
+    padding-bottom: 68px;
+    position: relative;
+    z-index: 1;
+
+    &::before, 
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &::after {
+        background-image: url('../images/icons/leaf-1.svg');
+        width: 43px;
+        height: 60px;
+        right: 186px;
+        top: -30px;
+        background-size: auto;
+    }
+
+    &::before {
+        background-image: url('../images/icons/leaf-2.svg');
+        width: 120px;
+        height: 110px;
+        top: 104px;
+        left: 278px;
+        background-size: contain;
+    }
+
+
+    .main-title {
+        @include mainTitle;
+        max-width: inherit;
+        text-align: center;
+        margin: 0 auto;
+
+        &::after {
+            max-width: 322px;
+            left: calc(50% - 161px);
+        }
+
+        &::before {
+            content: none;
+        }
+    }
+
+    .form-banner {
+        background: transparent;
+        padding: 0;
+        margin-top: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .main-button {
+            @include mainButton;
+            @include mainBtnWithIcon;
+            margin: 0;
+            align-self: flex-end;
+            padding: 17px 10px;
+        }
+
+        .form-label {
+            margin-bottom: 0;
+
+            .form-input {
+                min-width: 340px;
+            }
+
+            &__text {
+                margin-bottom: 5px;
+            }
+
+            &--margin {
+                margin-bottom: 0;
+                min-width: 460px;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+        }
+    }
+    .form-block__description {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 170%;
+        text-align: center;
+        color: #1E2330;
+        margin-top: 38px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 1110px) {
+    .form-block {
+        .main-title {
+            max-width: 600px;
+        }
+
+        .form-banner {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+
+            .main-button {
+                min-width: 340px;
+                margin: 0 auto;
+            }
+
+            .form-label {
+                &--margin {
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+                    min-width: 340px;
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .form-block {
+        padding-top: 75px;
+
+        &::before {
+            top: 104px;
+            left: 28px;
+        }
+
+        .main-title {
+            @include mainTitleMobile;
+            font-size: 28px;
+        }
+
+        .form-banner {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+
+            .main-button {
+                min-width: 340px;
+                margin: 0 auto;
+            }
+
+            .form-label {
+                &--margin {
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+                    min-width: 340px;
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .form-block {
+
+        .main-title {
+            @include mainTitleMobileSmall;
+            font-size: 20px;
+
+            &::after {
+                width: 200px;
+                left: calc(50% - 100px);
+            }
+        }
+
+        .form-banner {
+            .main-button {
+                min-width: 280px;
+            }
+
+            .form-label {
+                .form-input {
+                    min-width: 280px;
+                }
+
+                &--margin {
+                    min-width: 280px;
+                }
+            }
+        }
+    }
+}

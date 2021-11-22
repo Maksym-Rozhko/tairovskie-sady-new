@@ -1,0 +1,99 @@
+.sections-container.screen-wrapp {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background: url('../images/icons/huge-circles.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        width: 1600px;
+        height: 1596px;
+        z-index: -1;
+        top: -28px;
+        left: calc(50% - 840px);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        background: url('../images/icons/leaf-3.svg');
+        width: 240px;
+        height: 245px;
+        bottom: 256px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        left: calc(50% - 120px);
+        transform: rotate(-5deg);
+    }
+}
+
+@media (max-width: 1220px) {
+    .sections-container.screen-wrapp {
+    
+        &::after {
+            width: 900px;
+            height: 900px;
+            top: 850px;
+            left: calc(50% - 490px);
+            background-size: contain;
+        }
+    
+        &::before {
+            bottom: 308px;
+            transform: rotate(-8deg);
+        }
+    }
+}
+
+@media (max-width: 1110px) {
+    .sections-container.screen-wrapp {
+    
+        &::after {
+            top: 1050px;
+            left: calc(50% - 450px);
+            background-size: contain;
+        }
+    
+        &::before {
+            bottom: 326px;
+            transform: rotate(-3deg);
+        }
+    }
+}
+
+@media (max-width: 715px) {
+    .sections-container.screen-wrapp {
+    
+        &::after {
+            width: 500px;
+            height: 500px;
+            top: inherit;
+            bottom: 410px;
+            left: calc(50% - 250px);
+            background-size: contain;
+        }
+    
+        &::before {
+            bottom: 373px;
+            transform: rotate(-4deg);
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .sections-container.screen-wrapp {
+    
+        &::after {
+            content: none;
+        }
+    
+        &::before {
+            content: none;
+        }
+    }
+}

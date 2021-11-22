@@ -1,0 +1,23 @@
+@keyframes arrow-shake-left {
+    0%, 100% {
+        left: 25px;
+    }
+    50% {
+        left: 14px;
+    }
+}
+
+@keyframes arrow-shake-right {
+    0%, 100% {
+        right: 25px;
+    }
+    50% {
+        right: 14px;
+    }
+}
+
+@keyframes heart {
+    30% {box-shadow: 0 0 0px #87AE1B} 
+    60% {box-shadow: 0 0 20px #87AE1B, 0 0 30px #87AE1B, 0 0 30px #87AE1B}
+    90% {box-shadow: 0 0 1px #87AE1B}
+}

@@ -1,0 +1,56 @@
+.callback-btn {
+    position: fixed;
+    bottom: 85px;
+    left: 25px;
+    z-index: 11;
+
+    .callback-radius {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #9ACC10;
+        border-radius: 50%;
+        animation: heart 5s infinite;
+        cursor: pointer;
+        position: relative;
+        padding-top: 7px;
+        transition: all ease-in-out .4s;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            border: 1px solid #FBFBFE;
+            width: 86px;
+            height: 86px;
+            border-radius: 50%;
+            top: calc(50% - 44px);
+            left: calc(50% - 44px);
+            transition: all ease-in-out .4s;
+        }
+
+        .callback-icon {
+            width: 40px;
+            height: 40px;
+            fill: #FBFBFE;
+            transition: all ease-in-out .4s;
+        }
+    }
+
+    &:hover {
+        .callback-radius {
+            background: #FBFBFE;
+            &::before {
+                border: 1px solid #9ACC10;
+            }
+
+            .callback-icon {
+                width: 40px;
+                height: 40px;
+                fill: #9ACC10;
+            }
+        }
+    }
+}
